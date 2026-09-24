@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>F90 Calculator | النظام الملكي لحسابات الشحن و VIP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900;1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient Glow Background Background Effects -->
+    <div class="bg-glow spot-1"></div>
+    <div class="bg-glow spot-2"></div>
+
+    <div class="app-container">
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-top">
+                <div class="brand-badge">
+                    <span class="pulse-dot"></span>
+                    <span>ULTRA VIP SYSTEM</span>
+                </div>
+                <button id="themeToggle" class="btn-theme" type="button" aria-label="تغيير الثيم">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">الوضع الليلي</span>
+                </button>
+            </div>
+            
+            <div class="brand-title-wrap">
+                <h1 class="main-title">F90 CALCULATOR</h1>
+                <p class="sub-title">المنصة الاحترافية المتكاملة لخدمات الشحن وحسابات الـ VIP لوكالة مجلس القمة</p>
+            </div>
+
+            <!-- Quick Navigation Pills -->
+            <nav class="quick-nav">
+                <a href="#sec-calc" class="nav-chip active">حاسبة VIP</a>
+                <a href="#sec-subcalcs" class="nav-chip">حاسبة التارجت والألعاب</a>
+                <a href="#sec-stats" class="nav-chip">الإحصائيات والسجل</a>
+                <a href="#sec-services" class="nav-chip">خدماتنا وسياساتنا</a>
+                <a href="#sec-vip-table" class="nav-chip">جدول المستويات</a>
+            </nav>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <div class="main-grid">
+            
+            <!-- Right Column / Primary Calculator -->
+            <div class="grid-column main-controls-col">
+                
+                <!-- Section 01: Client Data -->
+                <section class="card collapsible-card" id="sec-client">
+                    <div class="card-header" data-toggle="clientBody">
+                        <div class="header-title-wrap">
+                            <span class="step-num">01</span>
+                            <div>
+                                <h2 class="card-title">بيانات العميل والعملية</h2>
+                                <p class="card-desc">تحديد هوية الحساب للتوثيق والحفظ</p>
+                            </div>
+                        </div>
+                        <span class="collapse-icon">⌃</span>
+                    </div>
+                    <div class="card-body" id="clientBody">
+                        <div class="input-grid grid-2">
+                            <div class="input-field">
+                                <label for="clientName">اسم العميل</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="clientName" placeholder="أدخل اسم العميل...">
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label for="clientId">ID الحساب</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="clientId" placeholder="أدخل ID الحساب...">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="clientStatus" class="status-banner hidden"></div>
+                    </div>
+                </section>
+
+                <!-- Section 02: VIP Calculation Engine -->
+                <section class="card" id="sec-calc">
+                    <div class="card-header border-none">
+                        <div class="header-title-wrap">
+                            <span class="step-num">02</span>
+                            <div>
+                                <h2 class="card-title">حسبة مستويات VIP</h2>
+                                <p class="card-desc">ضبط الانتقالات، التثبيت والعروض المتاحة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="input-grid grid-3">
+                            <div class="input-field">
+                                <label for="currentVip">المستوى الحالي</label>
+                                <select id="currentVip" class="styled-select"></select>
+                            </div>
+                            <div class="input-field">
+                                <label for="targetVip">المستوى المطلوب</label>
+                                <select id="targetVip" class="styled-select"></select>
+                            </div>
+                            <div class="input-field">
+                                <label for="multiplier">مضاعف العرض</label>
+                                <select id="multiplier" class="styled-select highlight-select">
+                                    <option value="1">×1 (عادي)</option>
+                                    <option value="2">×2</option>
+                                    <option value="3">×3</option>
+                                    <option value="4">×4</option>
+                                    <option value="5" selected>×5 (الافتراضي)</option>
+                                    <option value="6">×6</option>
+                                    <option value="7">×7</option>
+                                    <option value="8">×8</option>
+                                    <option value="9">×9</option>
+                                    <option value="10">×10 (الماكس)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-field mt-15">
+                            <label for="vipMode">نوع العملية الحسابية</label>
+                            <select id="vipMode" class="styled-select">
+                                <option value="reach" selected>الوصول والتسلق إلى مستوى جديد</option>
+                                <option value="currentLock">تثبيت واستدامة المستوى الحالي فقط</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Reach Box -->
+                        <div id="reachContainer" class="dynamic-container mt-15">
+                            <div class="alert-info">
+                                💡 <strong>ملاحظة الذكاء الحسابي:</strong> أدخل قيمة الانتقال الأول فقط، والأنظمة تحسب بقية المستويات تلقائياً بناءً على جدول المستويات المعتمد.
+                            </div>
+                            
+                            <div class="input-field mt-15">
+                                <label id="transitionLabel" for="firstTransitionInput" class="gold-label">VIP 10 → VIP 11</label>
+                                <div class="input-wrapper glow-input">
+                                    <input type="text" id="firstTransitionInput" placeholder="أدخل قيمة النقاط المتبقية (النقص)...">
+                                </div>
+                            </div>
+
+                            <div class="toggle-control mt-15">
+                                <label class="switch-ui">
+                                    <input type="checkbox" id="enableTargetLock">
+                                    <span class="slider-ui round"></span>
+                                </label>
+                                <span class="toggle-text">تفعيل تثبيت المستوى المطلوب أيضاً</span>
+                            </div>
+
+                            <div id="targetLockBox" class="target-lock-card hidden mt-10">
+                                <div class="lock-header">
+                                    <span id="targetLockTitle">تثبيت VIP --</span>
+                                    <span class="badge-lock">تثبيت تلقائي</span>
+                                </div>
+                                <div class="lock-body">
+                                    نقاط التثبيت المطلوبة: <strong id="targetLockValue">0</strong> XP
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 03: Support & Rates Settings -->
+                <section class="card" id="sec-rates">
+                    <div class="card-header border-none">
+                        <div class="header-title-wrap">
+                            <span class="step-num">03</span>
+                            <div>
+                                <h2 class="card-title">إعدادات الدعم والعملات</h2>
+                                <p class="card-desc">معدلات الدعم وأسعار صرف الدينار والدولار</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="input-grid grid-3">
+                            <div class="input-field">
+                                <label for="supportRate">دعم كل مليون شحن</label>
+                                <input type="text" id="supportRate" value="130,000">
+                            </div>
+                            <div class="input-field">
+                                <label for="jodRate">سعر الدعم (دينار JOD)</label>
+                                <input type="text" id="jodRate" value="11">
+                            </div>
+                            <div class="input-field">
+                                <label for="usdRate">سعر الدعم (دولار USD)</label>
+                                <input type="text" id="usdRate" value="15">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Controls -->
+                <div class="main-actions">
+                    <button id="calculateBtn" class="btn btn-primary btn-glow" type="button">
+                        <span>⚡ احسب الآن</span>
+                    </button>
+                    <button id="saveBtn" class="btn btn-success" type="button">
+                        <span>💾 حفظ في السجل</span>
+                    </button>
+                    <button id="newBtn" class="btn btn-secondary" type="button">
+                        <span>🔄 عملية جديدة</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Left Column / Live Output Panel -->
+            <div class="grid-column live-output-col">
+                
+                <!-- Display Card -->
+                <section class="card display-card">
+                    <div class="display-badge">النتيجة النهائية المعتمدة</div>
+                    
+                    <div class="display-route">
+                        <span id="resultTransitionText" class="route-text">VIP 10 → VIP 11</span>
+                        <span id="resultMultiplierBadge" class="badge-tag">×5</span>
+                    </div>
+
+                    <div class="display-main-val-wrap">
+                        <span class="val-label">إجمالي شحن الوكيل المطلوب</span>
+                        <div id="actualChargeDisplay" class="val-number">0</div>
+                        <span class="val-unit">COINS / كوينز</span>
+                    </div>
+
+                    <button id="copyInvoiceBtn" class="btn btn-invoice mt-15" type="button">
+                        <span>📋 نسخ تقرير الحسبة للعميل (واتساب)</span>
+                    </button>
+                </section>
+
+                <!-- Breakdown Stat Cards -->
+                <div class="stats-matrix grid-2">
+                    <div class="card mini-stat-card">
+                        <span class="m-label">نقاط الوصول</span>
+                        <strong id="reachPoints" class="m-val">0</strong>
+                    </div>
+                    <div class="card mini-stat-card">
+                        <span class="m-label">نقاط التثبيت</span>
+                        <strong id="lockPoints" class="m-val">0</strong>
+                    </div>
+                    <div class="card mini-stat-card span-2">
+                        <span class="m-label">إجمالي نقاط VIP الكلية</span>
+                        <strong id="totalVipPoints" class="m-val gold-glow-text">0</strong>
+                    </div>
+                    <div class="card mini-stat-card span-2">
+                        <span class="m-label">إجمالي الدعم المستحق</span>
+                        <strong id="supportNeeded" class="m-val">0</strong>
+                    </div>
+                    <div class="card mini-stat-card price-card jod">
+                        <span class="m-label">السعر الإجمالي (دينار)</span>
+                        <strong id="jodTotal" class="m-val">0.00 د.أ</strong>
+                    </div>
+                    <div class="card mini-stat-card price-card usd">
+                        <span class="m-label">السعر الإجمالي (دولار)</span>
+                        <strong id="usdTotal" class="m-val">$ 0.00</strong>
+                    </div>
+                </div>
+
+                <!-- Equation Display -->
+                <section class="card math-card">
+                    <h3 class="math-title">📐 تفكيك المعادلة الحسابية</h3>
+                    <div id="formulaText" class="code-box">
+                        نقاط الوصول (0) + التثبيت (0) = الإجمالي (0) ÷ العرض (×5) = 0
+                    </div>
+                    <div id="supportFormulaText" class="code-box mt-10">
+                        حسبة الدعم: الشحن (0) ÷ 1,000,000 × 130,000 = 0
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- Section: F90 Sub-Calculators -->
+        <section class="card mt-25" id="sec-subcalcs">
+            <div class="card-header border-none">
+                <div class="header-title-wrap">
+                    <span class="step-num">04</span>
+                    <div>
+                        <h2 class="card-title">حاسبات F90 السريعة</h2>
+                        <p class="card-desc">حاسبة التارجت الحرة وحاسبة مكاسب الألعاب الفورية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="grid-2 gap-20">
+                    <!-- Calc 1 -->
+                    <div class="sub-calc-card">
+                        <div class="sub-calc-head">
+                            <span class="sub-icon">🎯</span>
+                            <h4>حاسبة سحب التارجت</h4>
+                        </div>
+                        <div class="input-field mt-10">
+                            <input type="text" id="targetInput" placeholder="أدخل قيمة التارجت المطلوب...">
+                        </div>
+                        <div class="calc-output-pills mt-15">
+                            <div class="out-pill">الدينار الأردني: <strong id="targetJod">0.00</strong> د.أ</div>
+                            <div class="out-pill">الدولار الأمريكي: <strong id="targetUsd">0.00</strong> $</div>
+                        </div>
+                    </div>
+
+                    <!-- Calc 2 -->
+                    <div class="sub-calc-card">
+                        <div class="sub-calc-head">
+                            <span class="sub-icon">🎮</span>
+                            <h4>حاسبة مكاسب الألعاب</h4>
+                        </div>
+                        <div class="input-field mt-10">
+                            <input type="text" id="gamesInput" placeholder="أدخل نقاط/مكاسب الألعاب...">
+                        </div>
+                        <div class="calc-output-pills mt-15">
+                            <div class="out-pill">الدينار الأردني: <strong id="gamesJod">0.00</strong> د.أ</div>
+                            <div class="out-pill">الدولار الأمريكي: <strong id="gamesUsd">0.00</strong> $</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: System Services & Policies -->
+        <section class="card mt-25" id="sec-services">
+            <div class="card-header border-none">
+                <div class="header-title-wrap">
+                    <span class="step-num">05</span>
+                    <div>
+                        <h2 class="card-title">خدمات النظام وسياسات الشحن</h2>
+                        <p class="card-desc">دليل الاستخدام الكامل والضوابط المعتمدة في F90 Calculator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="grid-2 gap-20">
+                    <div class="policy-block">
+                        <h3 class="p-title">✨ الخدمات التي يقدمها النظام</h3>
+                        <ul class="p-list">
+                            <li><strong>حساب تكاليف الترقية:</strong> حساب دقيق لمقدار الكوينز والنقاط المتبقية للوصول لأي مستوى VIP.</li>
+                            <li><strong>تثبيت المستويات:</strong> حساب التكلفة الفعلية للحفاظ على المستوى الحالي أو المستوى المستهدف دون الهبوط.</li>
+                            <li><strong>مضاعفات العروض:</strong> إمكانية تطبيق العروض التنافسية من (×1 حتى ×10) بتقسيم نقاط VIP مع عدم المساس بالقيمة الحقيقية.</li>
+                            <li><strong>حسابات الدعم الشاملة:</strong> حساب الدعم المكتسب لكل مليون شحن وتحويل القيمة تلقائياً بالدينار والدولار.</li>
+                            <li><strong>توثيق الفواتير:</strong> توليد تقارير مالية سريعة قابلة للإرسال المباشر للعميل عبر وسائل التواصل.</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-block">
+                        <h3 class="p-title">📜 سياسات وقواعد الشحن المعتمدة</h3>
+                        <ul class="p-list">
+                            <li><strong>قاعدة تقسيم العرض:</strong> يتم تقسيم نقاط VIP الإجمالية على العرض المختار للحصول على شحن الوكيل الصافي.</li>
+                            <li><strong>حساب الانتقال المتعدد:</strong> أدخل النقص المتبقي للانتقال الأول، وجميع الانتقالات التالية تُحسب تلقائياً وبدقة من جدول الأرقام المعتمد.</li>
+                            <li><strong>الدعم التلقائي:</strong> الدعم يحسب بناءً على معادلة الشحن المعتمدة دون زيادة أو نقصان لضمان حقوق الطرفين.</li>
+                            <li><strong>حفظ البيانات:</strong> السجلات تُحفظ في متصفحك محلياً بشكل آمن ومحمي بالكامل دون الحاجة لاتصال بالخادم.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Stats Dashboard -->
+        <section class="card collapsible-card mt-25" id="sec-stats">
+            <div class="card-header" data-toggle="statsBody">
+                <div class="header-title-wrap">
+                    <span class="step-num">06</span>
+                    <div>
+                        <h2 class="card-title">لوحة الإحصائيات العامة</h2>
+                        <p class="card-desc">تحليل ملخص للعمليات المحفوظة في السجل</p>
+                    </div>
+                </div>
+                <span class="collapse-icon">⌃</span>
+            </div>
+            <div class="card-body" id="statsBody">
+                <div class="grid-4 gap-12 mt-10">
+                    <div class="analytics-card">
+                        <span>إجمالي العمليات</span>
+                        <strong id="statOperations">0</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>عدد العملاء</span>
+                        <strong id="statCustomers">0</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>إجمالي الشحن</span>
+                        <strong id="statCharge">0</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>إجمالي الدعم</span>
+                        <strong id="statSupport">0</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>إجمالي نقاط VIP</span>
+                        <strong id="statVipPoints">0</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>الإجمالي (دينار)</span>
+                        <strong id="statJod">0.00</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>الإجمالي (دولار)</span>
+                        <strong id="statUsd">0.00</strong>
+                    </div>
+                    <div class="analytics-card">
+                        <span>أعلى تارجت</span>
+                        <strong id="statHighestVip">VIP -</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Saved Records & History -->
+        <section class="card collapsible-card mt-25" id="sec-history">
+            <div class="card-header" data-toggle="historyBody">
+                <div class="header-title-wrap">
+                    <span class="step-num">07</span>
+                    <div>
+                        <h2 class="card-title">سجل العمليات والعملاء</h2>
+                        <p class="card-desc">سجل تفاعلي محلي مع إمكانية الاسترجاع والبحث الفوري</p>
+                    </div>
+                </div>
+                <span class="collapse-icon">⌃</span>
+            </div>
+            <div class="card-body" id="historyBody">
+                <div class="history-filter-bar">
+                    <div class="search-wrap">
+                        <input type="text" id="historySearch" placeholder="🔍 ابحث باسم العميل أو ID الحساب...">
+                    </div>
+                    <button id="clearHistory" class="btn btn-danger-outline" type="button">مسح السجل بالكامل</button>
+                </div>
+                <div id="history" class="history-container mt-15">
+                    <!-- Dynamic Records Rendered Here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Official VIP Reference Table -->
+        <section class="card mt-25" id="sec-vip-table">
+            <div class="card-header border-none">
+                <div class="header-title-wrap">
+                    <span class="step-num">08</span>
+                    <div>
+                        <h2 class="card-title">الجدول المرجعي لمستويات VIP</h2>
+                        <p class="card-desc">الجدول الرسمي المعتمد للشحن ونقاط الترقية والتثبيت</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-container">
+                    <table class="luxury-table">
+                        <thead>
+                            <tr>
+                                <th>المستوى</th>
+                                <th>إجمالي الشحن التراكمي</th>
+                                <th>XP المطلوب للترقية (Upgrade)</th>
+                                <th>XP الحفاظ والتثبيت (Maintain)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vipTableBody">
+                            <!-- Dynamic Content -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Contact Card -->
+        <section class="card developer-contact-card mt-25">
+            <div class="dev-card-inner">
+                <div class="dev-info-side">
+                    <div class="dev-badge">OFFICIAL DEVELOPER</div>
+                    <h3 class="dev-name">F90 SERVICES</h3>
+                    <p class="dev-desc">المطور المعتمد للنظام والمطور الرسمي لوكالة مجلس القمة الأردنية</p>
+                </div>
+                <div class="dev-links-side">
+                    <div class="dev-link-item">
+                        <span class="link-label">ID الحساب:</span>
+                        <span class="link-val">31991930</span>
+                        <button class="copy-btn" data-copy="31991930">نسخ ID</button>
+                    </div>
+                    <div class="dev-link-item">
+                        <span class="link-label">WhatsApp:</span>
+                        <span class="link-val" dir="ltr">+970 568 181 910</span>
+                        <button class="copy-btn" data-copy="+970568181910">نسخ الرقم</button>
+                    </div>
+                    <div class="dev-link-item">
+                        <span class="link-label">Instagram:</span>
+                        <span class="link-val" dir="ltr">@f90.xd</span>
+                        <button class="copy-btn" data-copy="f90.xd">نسخ اليوزر</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Footer -->
+        <footer class="main-footer mt-25">
+            <div class="footer-logo">F90 CALCULATOR</div>
+            <p class="footer-copy">جميع الحقوق محفوظة © 2026 — تم التطوير بواسطة F90 للخدمات الرقمية</p>
+            <div class="footer-credits">تصميم ملكي خاص لوكالة مجلس القمة الأردنية</div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
