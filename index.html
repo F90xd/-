@@ -1,400 +1,808 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>F90 CALCULATOR — النظام الرقمي الاحترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#08111f">
+    <meta name="description" content="نظام احترافي لإدارة وحساب عمليات VIP والشحن والدعم">
+    <title>VIP Control — F90</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900;1000&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="theme-slate">
 
-    <!-- Top Announcement Bar -->
-    <div class="ticker-wrap">
-        <div class="ticker-label">تحديثات F90</div>
-        <div class="ticker-text">
-            <span>🔥 مرحباً بكم في منصة F90 CALCULATOR الحصرية</span>
-            <span>💎 حسابات VIP بدقة متناهية وسرعة فائقة</span>
-            <span>⚡ تحويلات فورية للدينار والدولار ومشاركة واتساب مباشرة</span>
+<body>
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+<div class="ambient ambient-three"></div>
+
+<div class="app-shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <a href="#dashboard" class="brand">
+            <span class="brand-mark">F90</span>
+            <span class="brand-copy">
+                <b>VIP CONTROL</b>
+                <small>Smart Calculation System</small>
+            </span>
+        </a>
+
+        <nav class="main-nav">
+            <a class="nav-link active" href="#dashboard">الرئيسية</a>
+            <a class="nav-link" href="#calculator">الحاسبات</a>
+            <a class="nav-link" href="#historySection">السجل</a>
+            <a class="nav-link" href="#vipReference">VIP</a>
+            <a class="nav-link" href="#developer">المطور</a>
+        </nav>
+
+        <div class="top-actions">
+            <button id="themeToggle" class="icon-button" type="button" aria-label="تغيير المظهر">◐</button>
+            <button id="mobileMenuBtn" class="icon-button mobile-menu-btn" type="button" aria-label="القائمة">☰</button>
         </div>
-    </div>
 
-    <!-- Main Navigation Header -->
-    <header class="app-header">
-        <div class="header-container">
-            <div class="brand-block">
-                <div class="logo-icon">F90</div>
-                <div class="brand-text">
-                    <h1>F90 CALCULATOR</h1>
-                    <span class="badge-tech">SYSTEM V5.0</span>
-                </div>
-            </div>
-
-            <nav class="header-actions">
-                <button id="devModalBtn" class="nav-btn btn-dev" type="button">
-                    <span class="btn-icon">👨‍💻</span>
-                    <span>مطور الموقع</span>
-                </button>
-                <button id="themeToggleBtn" class="nav-btn btn-theme" type="button">
-                    <span class="btn-icon">🎨</span>
-                    <span id="themeName">الثيم الكحلي</span>
-                </button>
-            </nav>
-        </div>
     </header>
 
-    <!-- Main App Layout -->
-    <main class="app-viewport">
-        
-        <!-- TOP SECTION: Customer & Config -->
-        <section class="panel-section">
-            <div class="panel-header">
-                <div class="panel-title"><span class="step-badge">01</span> بيانات العملية والعميل</div>
+    <!-- MOBILE NAV -->
+    <div id="mobileNav" class="mobile-nav">
+        <a href="#dashboard">الرئيسية</a>
+        <a href="#calculator">الحاسبات</a>
+        <a href="#historySection">السجل</a>
+        <a href="#vipReference">جدول VIP</a>
+        <a href="#developer">المطور</a>
+    </div>
+
+    <!-- AD / STATUS STRIP -->
+    <div class="smart-strip">
+        <div class="strip-pulse"></div>
+        <span>F90 SMART SYSTEM</span>
+        <b>حسابات دقيقة • سجل محلي • مشاركة فورية</b>
+        <span class="strip-time" id="liveClock">--:--</span>
+    </div>
+
+    <main id="dashboard">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span></span>
+                    ADVANCED VIP CALCULATOR
+                </div>
+
+                <h1>
+                    نظام حساب
+                    <strong>VIP</strong>
+                    متكامل
+                </h1>
+
+                <p>
+                    تحكم كامل بالانتقال، التثبيت، الشحن، الدعم،
+                    الأسعار، السجل والتقارير من واجهة واحدة.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#vipEngine" class="hero-btn primary-btn">
+                        ابدأ الحسبة
+                        <span>↓</span>
+                    </a>
+
+                    <a href="#calculator" class="hero-btn ghost-btn">
+                        الحاسبات
+                    </a>
+                </div>
+
+                <div class="hero-metrics">
+                    <div>
+                        <strong>20</strong>
+                        <span>مستوى VIP</span>
+                    </div>
+                    <div>
+                        <strong>10×</strong>
+                        <span>أقصى عرض</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>محلي وآمن</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="panel-body grid-form-4">
-                <div class="field-group">
-                    <label for="clientName">اسم العميل</label>
-                    <input type="text" id="clientName" placeholder="أدخل اسم العميل...">
+
+            <div class="hero-orbit">
+
+                <div class="orbit-ring ring-one"></div>
+                <div class="orbit-ring ring-two"></div>
+
+                <div class="hero-center">
+                    <span>VIP</span>
+                    <strong id="heroCurrentVip">10</strong>
+                    <small>CURRENT LEVEL</small>
                 </div>
-                <div class="field-group">
-                    <label for="clientId">ID الحساب</label>
-                    <input type="text" id="clientId" placeholder="أدخل ID الحساب...">
+
+                <div class="orbit-node node-one">
+                    <b>XP</b>
+                    <span>حساب</span>
                 </div>
-                <div class="field-group">
-                    <label for="vipMode">نوع الحسبة</label>
-                    <select id="vipMode" class="styled-select">
-                        <option value="reach" selected>الوصول والتسلق لمستوى جديد</option>
-                        <option value="currentLock">تثبيت واستدامة المستوى الحالي</option>
-                    </select>
+
+                <div class="orbit-node node-two">
+                    <b>×5</b>
+                    <span>عرض</span>
                 </div>
-                <div class="field-group">
-                    <label for="multiplier">مضاعف العرض</label>
-                    <select id="multiplier" class="styled-select focus-blue">
-                        <option value="1">×1 (عادي)</option>
-                        <option value="2">×2</option>
-                        <option value="3">×3</option>
-                        <option value="4">×4</option>
-                        <option value="5" selected>×5 (الافتراضي)</option>
-                        <option value="6">×6</option>
-                        <option value="7">×7</option>
-                        <option value="8">×8</option>
-                        <option value="9">×9</option>
-                        <option value="10">×10 (الحد الأقصى)</option>
-                    </select>
+
+                <div class="orbit-node node-three">
+                    <b>JOD</b>
+                    <span>دعم</span>
                 </div>
+
             </div>
-            <div id="clientStatus" class="status-msg hidden"></div>
+
         </section>
 
-        <!-- MAIN CORE GRID: Calculator Inputs vs Summary Dashboard -->
-        <div class="core-grid">
-            
-            <!-- Left Side: VIP Engine & Rates -->
-            <div class="core-column">
-                
-                <!-- VIP Levels Config Panel -->
-                <section class="panel-section">
-                    <div class="panel-header">
-                        <div class="panel-title"><span class="step-badge">02</span> إعدادات مستويات VIP</div>
+        <!-- MAIN VIP ENGINE -->
+        <section id="vipEngine" class="engine-layout">
+
+            <!-- INPUT PANEL -->
+            <div class="panel input-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-number">01</span>
+                        <div>
+                            <small>CONTROL CENTER</small>
+                            <h2>إعداد العملية</h2>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <div class="grid-form-3">
-                            <div class="field-group">
-                                <label for="currentVip">المستوى الحالي</label>
-                                <select id="currentVip" class="styled-select"></select>
-                            </div>
-                            <div class="field-group">
-                                <label for="targetVip">المستوى المطلوب</label>
-                                <select id="targetVip" class="styled-select"></select>
-                            </div>
-                            <div class="field-group">
-                                <label id="transitionLabel" for="firstTransitionInput" class="highlight-label">VIP 10 → VIP 11</label>
-                                <input type="text" id="firstTransitionInput" placeholder="أدخل النقاط المتبقية (النقص)...">
-                            </div>
+
+                    <span class="live-badge">
+                        <i></i>
+                        LIVE
+                    </span>
+                </div>
+
+                <div class="client-mini-grid">
+
+                    <label class="field">
+                        <span>اسم العميل</span>
+                        <input id="clientName" type="text" placeholder="اكتب اسم العميل" autocomplete="off">
+                    </label>
+
+                    <label class="field">
+                        <span>ID الحساب</span>
+                        <input id="clientId" type="text" inputmode="numeric" placeholder="رقم الحساب" autocomplete="off">
+                    </label>
+
+                </div>
+
+                <div class="vip-selector">
+
+                    <div class="selector-header">
+                        <span>مسار المستوى</span>
+                        <small id="routeText">VIP 10 → VIP 11</small>
+                    </div>
+
+                    <div class="vip-route">
+
+                        <div class="vip-select-box current">
+                            <span class="select-caption">CURRENT</span>
+                            <strong id="currentVipDisplay">VIP 10</strong>
+                            <select id="currentVip"></select>
                         </div>
 
-                        <div id="targetLockRow" class="lock-toggle-wrap mt-15">
-                            <label class="switch-control">
-                                <input type="checkbox" id="enableTargetLock">
-                                <span class="switch-slider"></span>
-                            </label>
-                            <span class="switch-label-text">تفعيل تثبيت المستوى المطلوب تلقائياً</span>
-                            <span id="targetLockValueDisplay" class="badge-lock-val hidden">0 XP</span>
+                        <div class="route-arrow">
+                            <span>→</span>
+                            <small>TRANSFER</small>
                         </div>
-                    </div>
-                </section>
 
-                <!-- Support Rates Panel -->
-                <section class="panel-section">
-                    <div class="panel-header">
-                        <div class="panel-title"><span class="step-badge">03</span> أسعار الدعم والعملات</div>
-                    </div>
-                    <div class="panel-body grid-form-3">
-                        <div class="field-group">
-                            <label for="supportRate">دعم كل مليون شحن</label>
-                            <input type="text" id="supportRate" value="130,000">
+                        <div class="vip-select-box target">
+                            <span class="select-caption">TARGET</span>
+                            <strong id="targetVipDisplay">VIP 11</strong>
+                            <select id="targetVip"></select>
                         </div>
-                        <div class="field-group">
-                            <label for="jodRate">سعر الدعم (دينار JOD)</label>
-                            <input type="text" id="jodRate" value="11">
-                        </div>
-                        <div class="field-group">
-                            <label for="usdRate">سعر الدعم (دولار USD)</label>
-                            <input type="text" id="usdRate" value="15">
-                        </div>
-                    </div>
-                </section>
 
-                <!-- Actions Bar -->
-                <div class="action-grid">
-                    <button id="calculateBtn" class="action-btn btn-calc" type="button">⚡ احسب الحسبة الآن</button>
-                    <button id="saveBtn" class="action-btn btn-save" type="button">💾 حفظ في السجل</button>
-                    <button id="newBtn" class="action-btn btn-reset" type="button">🔄 إعادة ضبط</button>
+                    </div>
+
+                </div>
+
+                <div class="offer-grid">
+
+                    <div class="field">
+                        <span>العرض</span>
+                        <select id="multiplier">
+                            <option value="1">×1</option>
+                            <option value="2">×2</option>
+                            <option value="3">×3</option>
+                            <option value="4">×4</option>
+                            <option value="5" selected>×5</option>
+                            <option value="6">×6</option>
+                            <option value="7">×7</option>
+                            <option value="8">×8</option>
+                            <option value="9">×9</option>
+                            <option value="10">×10</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <span>قيمة الانتقال الأول</span>
+                        <input id="firstTransitionInput" type="text" inputmode="decimal" placeholder="أدخل القيمة" autocomplete="off">
+                    </div>
+
+                </div>
+
+                <div class="mode-switch">
+
+                    <label class="mode-card active" id="reachModeLabel">
+                        <input type="radio" name="mode" value="reach" checked>
+                        <span class="mode-icon">↗</span>
+                        <span>
+                            <b>الوصول إلى المستوى</b>
+                            <small>حساب الانتقالات حتى الهدف</small>
+                        </span>
+                    </label>
+
+                    <label class="mode-card" id="currentLockLabel">
+                        <input type="radio" name="mode" value="currentLock">
+                        <span class="mode-icon">◆</span>
+                        <span>
+                            <b>تثبيت الحالي</b>
+                            <small>حساب تثبيت المستوى الحالي فقط</small>
+                        </span>
+                    </label>
+
+                </div>
+
+                <div class="target-lock-card" id="targetLockBox">
+
+                    <div class="lock-copy">
+                        <div class="lock-icon">✓</div>
+                        <div>
+                            <b>تثبيت المستوى المطلوب</b>
+                            <small>إضافة قيمة الحفاظ للمستوى النهائي</small>
+                        </div>
+                    </div>
+
+                    <label class="switch">
+                        <input id="enableTargetLock" type="checkbox">
+                        <span></span>
+                    </label>
+
+                    <div id="targetLockInput" class="lock-result">
+                        <span>تثبيت VIP النهائي</span>
+                        <strong id="autoLockValue">0</strong>
+                    </div>
+
+                </div>
+
+                <!-- TRANSITION TIMELINE -->
+                <div class="timeline-area">
+
+                    <div class="sub-heading">
+                        <div>
+                            <small>STEP BY STEP</small>
+                            <h3>مسار الانتقال</h3>
+                        </div>
+                        <span id="transitionCount">0 انتقال</span>
+                    </div>
+
+                    <div id="transitionList" class="transition-timeline"></div>
+
                 </div>
 
             </div>
 
-            <!-- Right Side: Clean Executive Dashboard -->
-            <div class="core-column">
-                
-                <!-- Main Executive Summary Card -->
-                <section class="exec-dashboard-card">
-                    <div class="exec-header">
-                        <span class="exec-tag">الملخص النهائي المعتمد</span>
-                        <span id="summaryRouteBadge" class="exec-route">VIP 10 → VIP 11 (×5)</span>
+            <!-- SUMMARY PANEL -->
+            <aside class="panel summary-panel">
+
+                <div class="summary-top">
+                    <div>
+                        <small>FINAL OPERATION</small>
+                        <h2>الملخص النهائي</h2>
                     </div>
 
-                    <!-- Main Result Units -->
-                    <div class="primary-result-box">
-                        <div class="res-caption">إجمالي شحن الوكيل الصافي (الكسب)</div>
-                        <div id="actualChargeDisplay" class="res-value">0</div>
-                        <div class="res-unit">COINS / كوينز</div>
+                    <div class="summary-badge" id="resultMultiplier">×5</div>
+                </div>
+
+                <div class="final-number">
+                    <span>إجمالي شحن الوكيل</span>
+                    <strong id="actualCharge">0</strong>
+                    <small>COINS</small>
+                </div>
+
+                <div class="summary-route">
+                    <span id="resultTitle">VIP 10 → VIP 11</span>
+                    <i></i>
+                    <b id="summaryMode">وصول</b>
+                </div>
+
+                <div class="summary-breakdown">
+
+                    <div class="summary-row">
+                        <span>إجمالي نقاط الوصول</span>
+                        <strong id="reachPoints">0</strong>
                     </div>
 
-                    <!-- Grid Stats Matrix -->
-                    <div class="res-matrix-grid">
-                        <div class="matrix-item">
-                            <span class="m-title">نقاط الوصول</span>
-                            <span id="reachPoints" class="m-num cyan-text">0</span>
+                    <div class="summary-row">
+                        <span>نقاط التثبيت</span>
+                        <strong id="lockPoints">0</strong>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>إجمالي نقاط VIP</span>
+                        <strong id="totalVipPoints">0</strong>
+                    </div>
+
+                    <div class="summary-row support-row">
+                        <span>الدعم المطلوب</span>
+                        <strong id="supportNeeded">0</strong>
+                    </div>
+
+                    <div class="money-row">
+                        <div>
+                            <small>JOD</small>
+                            <strong id="jodTotal">0.00</strong>
+                            <span>د.أ</span>
                         </div>
-                        <div class="matrix-item">
-                            <span class="m-title">نقاط التثبيت</span>
-                            <span id="lockPoints" class="m-num cyan-text">0</span>
-                        </div>
-                        <div class="matrix-item span-2">
-                            <span class="m-title">إجمالي نقاط VIP الكلية</span>
-                            <span id="totalVipPoints" class="m-num red-text">0 XP</span>
-                        </div>
-                        <div class="matrix-item span-2">
-                            <span class="m-title">إجمالي الدعم المطلوب</span>
-                            <span id="supportNeeded" class="m-num cyan-text">0</span>
-                        </div>
-                        <div class="matrix-item price-item jod">
-                            <span class="m-title">السعر الإجمالي بالدينار</span>
-                            <span id="jodTotal" class="m-num">0.00 د.أ</span>
-                        </div>
-                        <div class="matrix-item price-item usd">
-                            <span class="m-title">السعر الإجمالي بالدولار</span>
-                            <span id="usdTotal" class="m-num">$ 0.00</span>
+
+                        <div>
+                            <small>USD</small>
+                            <strong id="usdTotal">0.00</strong>
+                            <span>$</span>
                         </div>
                     </div>
 
-                    <!-- WhatsApp Sharing Button -->
-                    <button id="shareWhatsappBtn" class="btn-whatsapp" type="button">
-                        <span class="wa-icon">📱</span>
-                        <span>مشاركة التقرير عبر WhatsApp</span>
+                </div>
+
+                <div class="formula-box">
+                    <div>
+                        <span>VIP XP</span>
+                        <b id="formulaVip">0</b>
+                    </div>
+                    <i>÷</i>
+                    <div>
+                        <span>العرض</span>
+                        <b id="formulaMultiplier">×5</b>
+                    </div>
+                    <i>=</i>
+                    <div class="formula-final">
+                        <span>الشحن</span>
+                        <b id="formulaCharge">0</b>
+                    </div>
+                </div>
+
+                <div class="support-formula">
+                    <span>معادلة الدعم</span>
+                    <b id="formulaSupport">0 ÷ 1,000,000 × 130,000 = 0</b>
+                </div>
+
+                <div class="summary-actions">
+                    <button id="calculateBtn" class="action-btn primary-action" type="button">
+                        تحديث الحسبة
                     </button>
-                </section>
 
-                <!-- Detailed Single Transition Timeline Summary -->
-                <section class="panel-section">
-                    <div class="panel-header">
-                        <div class="panel-title">مسار الانتقال التجميعي الموحد</div>
-                    </div>
-                    <div class="panel-body">
-                        <div id="transitionsList" class="transitions-flow-box">
-                            <!-- Rendered dynamically without duplicates -->
+                    <button id="saveBtn" class="action-btn secondary-action" type="button">
+                        حفظ العملية
+                    </button>
+
+                    <button id="whatsappBtn" class="action-btn whatsapp-action" type="button">
+                        مشاركة واتساب
+                    </button>
+
+                    <button id="newBtn" class="action-btn subtle-action" type="button">
+                        عملية جديدة
+                    </button>
+                </div>
+
+                <div id="clientStatus" class="status-message hidden"></div>
+
+            </aside>
+
+        </section>
+
+        <!-- SUPPORT SETTINGS -->
+        <section class="settings-layout">
+
+            <div class="panel settings-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-number">02</span>
+                        <div>
+                            <small>SUPPORT ENGINE</small>
+                            <h2>إعدادات الدعم</h2>
                         </div>
                     </div>
-                </section>
+                </div>
+
+                <div class="settings-grid">
+
+                    <label class="field">
+                        <span>دعم كل مليون شحن</span>
+                        <input id="supportRate" type="text" inputmode="decimal" value="130000">
+                        <small>مثال: 130,000 دعم لكل مليون</small>
+                    </label>
+
+                    <label class="field">
+                        <span>سعر 130 ألف دعم — دينار</span>
+                        <input id="jodRate" type="text" inputmode="decimal" value="11">
+                    </label>
+
+                    <label class="field">
+                        <span>سعر 130 ألف دعم — دولار</span>
+                        <input id="usdRate" type="text" inputmode="decimal" value="15">
+                    </label>
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="panel rate-card">
 
-        <!-- QUICK TOOLS SECTION: Target, Games & Standard Calculator -->
-        <section class="panel-section mt-25">
-            <div class="panel-header">
-                <div class="panel-title"><span class="step-badge">04</span> حاسبات F90 السريعة والآلة الحاسبة العامة</div>
-            </div>
-            <div class="panel-body grid-tools-3">
-                
-                <!-- Target Calc -->
-                <div class="tool-card">
-                    <div class="tool-head">🎯 حاسبة سحب التارجت</div>
-                    <div class="field-group mt-10">
-                        <input type="text" id="targetInput" placeholder="أدخل قيمة التارجت...">
-                    </div>
-                    <div class="tool-results mt-10">
-                        <div>الدينار: <strong id="targetJod">0.00</strong> د.أ</div>
-                        <div>الدولار: <strong id="targetUsd">0.00</strong> $</div>
-                    </div>
+                <div class="rate-card-title">
+                    <span>LIVE RATE</span>
+                    <i></i>
                 </div>
 
-                <!-- Games Calc -->
-                <div class="tool-card">
-                    <div class="tool-head">🎮 مكاسب الألعاب</div>
-                    <div class="field-group mt-10">
-                        <input type="text" id="gamesInput" placeholder="أدخل مكاسب الألعاب...">
-                    </div>
-                    <div class="tool-results mt-10">
-                        <div>الدينار: <strong id="gamesJod">0.00</strong> د.أ</div>
-                        <div>الدولار: <strong id="gamesUsd">0.00</strong> $</div>
-                    </div>
+                <div class="rate-value">
+                    <strong id="liveSupportRate">130,000</strong>
+                    <span>دعم / 1M</span>
                 </div>
 
-                <!-- Embedded Standard Calculator -->
-                <div class="tool-card std-calc-card">
-                    <div class="tool-head">🧮 آلة حاسبة سريعة</div>
-                    <div class="std-calc-display" id="calcDisplay">0</div>
-                    <div class="std-calc-buttons">
-                        <button onclick="calcPad('C')" class="btn-c">C</button>
-                        <button onclick="calcPad('/')">/</button>
-                        <button onclick="calcPad('*')">*</button>
-                        <button onclick="calcPad('-')">-</button>
-                        <button onclick="calcPad('7')">7</button>
-                        <button onclick="calcPad('8')">8</button>
-                        <button onclick="calcPad('9')">9</button>
-                        <button onclick="calcPad('+')" class="btn-plus">+</button>
-                        <button onclick="calcPad('4')">4</button>
-                        <button onclick="calcPad('5')">5</button>
-                        <button onclick="calcPad('6')">6</button>
-                        <button onclick="calcPad('1')">1</button>
-                        <button onclick="calcPad('2')">2</button>
-                        <button onclick="calcPad('3')">3</button>
-                        <button onclick="calcPad('=')" class="btn-eq">=</button>
-                        <button onclick="calcPad('0')" class="btn-zero">0</button>
-                        <button onclick="calcPad('.')">.</button>
+                <div class="rate-money">
+                    <div>
+                        <span>JOD</span>
+                        <b id="liveJodRate">11</b>
+                    </div>
+                    <div>
+                        <span>USD</span>
+                        <b id="liveUsdRate">15</b>
                     </div>
                 </div>
 
             </div>
+
         </section>
 
-        <!-- SAVED RECORDS & STATS DASHBOARD -->
-        <section class="panel-section mt-25">
-            <div class="panel-header">
-                <div class="panel-title"><span class="step-badge">05</span> سجل العمليات والإحصائيات المحفوظة</div>
-                <button id="clearHistoryBtn" class="btn-clear" type="button">مسح السجل</button>
-            </div>
-            <div class="panel-body">
-                
-                <!-- Analytics Grid -->
-                <div class="analytics-bar mb-15">
-                    <div class="a-item">العمليات: <strong id="statOperations">0</strong></div>
-                    <div class="a-item">العملاء: <strong id="statCustomers">0</strong></div>
-                    <div class="a-item">الشحن: <strong id="statCharge">0</strong></div>
-                    <div class="a-item">الدعم: <strong id="statSupport">0</strong></div>
-                    <div class="a-item">دينار: <strong id="statJod">0.00</strong></div>
-                    <div class="a-item">دولار: <strong id="statUsd">0.00</strong></div>
-                </div>
+        <!-- CALCULATORS -->
+        <section id="calculator" class="calculator-section">
 
-                <div class="field-group mb-15">
-                    <input type="text" id="historySearch" placeholder="🔍 ابحث باسم العميل أو ID الحساب بسرعة...">
-                </div>
-
-                <div id="historyList" class="history-grid">
-                    <!-- Saved Operations rendered dynamically -->
+            <div class="section-header-wide">
+                <div>
+                    <span>03 / TOOLS</span>
+                    <h2>الحاسبات الإضافية</h2>
+                    <p>أدوات مستقلة للحساب السريع بدون التأثير على عملية VIP.</p>
                 </div>
             </div>
+
+            <div class="calculator-grid">
+
+                <div class="tool-card target-tool">
+
+                    <div class="tool-header">
+                        <div class="tool-icon">T</div>
+                        <div>
+                            <small>TARGET</small>
+                            <h3>حاسبة التارجت</h3>
+                        </div>
+                    </div>
+
+                    <label class="large-input">
+                        <span>قيمة التارجت</span>
+                        <input id="targetInput" type="text" inputmode="decimal" placeholder="أدخل قيمة التارجت">
+                    </label>
+
+                    <div class="tool-results">
+                        <div>
+                            <span>دينار</span>
+                            <strong id="targetJod">0.00</strong>
+                            <small>د.أ</small>
+                        </div>
+                        <div>
+                            <span>دولار</span>
+                            <strong id="targetUsd">0.00</strong>
+                            <small>$</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tool-card games-tool">
+
+                    <div class="tool-header">
+                        <div class="tool-icon">G</div>
+                        <div>
+                            <small>GAMES</small>
+                            <h3>حاسبة مكاسب الألعاب</h3>
+                        </div>
+                    </div>
+
+                    <label class="large-input">
+                        <span>قيمة الألعاب</span>
+                        <input id="gamesInput" type="text" inputmode="decimal" placeholder="أدخل القيمة">
+                    </label>
+
+                    <div class="tool-results">
+                        <div>
+                            <span>دينار</span>
+                            <strong id="gamesJod">0.00</strong>
+                            <small>د.أ</small>
+                        </div>
+                        <div>
+                            <span>دولار</span>
+                            <strong id="gamesUsd">0.00</strong>
+                            <small>$</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tool-card normal-tool">
+
+                    <div class="tool-header">
+                        <div class="tool-icon">∑</div>
+                        <div>
+                            <small>QUICK MATH</small>
+                            <h3>الحاسبة العادية</h3>
+                        </div>
+                    </div>
+
+                    <div class="normal-calculator">
+
+                        <input id="normalDisplay" type="text" readonly value="0">
+
+                        <div class="calc-buttons">
+                            <button data-calc="clear">AC</button>
+                            <button data-calc="delete">⌫</button>
+                            <button data-calc="operator" data-value="%">%</button>
+                            <button data-calc="operator" data-value="/">÷</button>
+
+                            <button data-calc="number" data-value="7">7</button>
+                            <button data-calc="number" data-value="8">8</button>
+                            <button data-calc="number" data-value="9">9</button>
+                            <button data-calc="operator" data-value="*">×</button>
+
+                            <button data-calc="number" data-value="4">4</button>
+                            <button data-calc="number" data-value="5">5</button>
+                            <button data-calc="number" data-value="6">6</button>
+                            <button data-calc="operator" data-value="-">−</button>
+
+                            <button data-calc="number" data-value="1">1</button>
+                            <button data-calc="number" data-value="2">2</button>
+                            <button data-calc="number" data-value="3">3</button>
+                            <button data-calc="operator" data-value="+">+</button>
+
+                            <button data-calc="number" data-value="0" class="zero">0</button>
+                            <button data-calc="number" data-value=".">.</button>
+                            <button data-calc="equals" class="equals">=</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <!-- FOOTER TABS SYSTEM (Hidden Info & Policies) -->
-        <section class="footer-info-system mt-25">
-            <div class="info-tabs-nav">
-                <button class="info-tab-btn active" data-tab="tab-services">عن المنصة والخدمات</button>
-                <button class="info-tab-btn" data-tab="tab-policies">شروط وسياسات العمل</button>
-                <button class="info-tab-btn" data-tab="tab-vip-ref">جدول VIP المرجعي</button>
-            </div>
+        <!-- HISTORY -->
+        <section id="historySection" class="history-section">
 
-            <div class="info-tab-content">
-                
-                <!-- Services Tab -->
-                <div id="tab-services" class="tab-pane active">
-                    <h3>💡 ماذا تقدم منصة F90 CALCULATOR؟</h3>
-                    <p>منصة F90 CALCULATOR هي النظام الرقمي الأدق والأسرع المخصص لإدارة وحساب كافة عمليات الشحن، معالجة ترقيات وتثبيت مستويات VIP، وحساب الدعم المالي والعملات الفورية (دينار ودولار) مع ميزات استخراج الفواتير وتوثيق العمليات محلياً.</p>
+            <div class="section-header-wide">
+
+                <div>
+                    <span>04 / RECORDS</span>
+                    <h2>السجل الذكي</h2>
+                    <p>افتح أي عملية لمراجعة جميع تفاصيلها دون استرجاعها.</p>
                 </div>
 
-                <!-- Policies Tab -->
-                <div id="tab-policies" class="tab-pane">
-                    <h3>📜 الشروط والسياسات المعتمدة</h3>
-                    <ul>
-                        <li>يتم احتساب شحن الوكيل الصافي بقسمة مجموع نقاط الـ VIP على العرض المختار دون المساس بقيم VIP الحقيقية.</li>
-                        <li>حسابات الدعم دقيقة ومدروسة بناءً على المعادلة الرسمية لشحن الملايين.</li>
-                        <li>جميع البيانات والسجلات تحفظ داخل متصفح المستخدم فقط دون إرسالها لأي خوادم خارجية لضمان الخصوصية التامة.</li>
-                    </ul>
-                </div>
-
-                <!-- VIP Reference Table Tab -->
-                <div id="tab-vip-ref" class="tab-pane">
-                    <h3>📊 جدول المستويات المرجعي (VIP Reference)</h3>
-                    <div class="table-scroll">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>المستوى</th>
-                                    <th>الشحن التراكمي</th>
-                                    <th>نقاط الترقية (Upgrade)</th>
-                                    <th>نقاط الحفاظ (Maintain)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="vipTableBody">
-                                <!-- Rendered dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="history-actions">
+                    <input id="historySearch" type="search" placeholder="بحث بالاسم أو ID">
+                    <button id="clearHistory" type="button">حذف الكل</button>
                 </div>
 
             </div>
+
+            <div id="history" class="history-grid"></div>
+
+        </section>
+
+        <!-- VIP REFERENCE -->
+        <section id="vipReference" class="reference-section">
+
+            <div class="section-header-wide">
+                <div>
+                    <span>05 / REFERENCE</span>
+                    <h2>مرجع مستويات VIP</h2>
+                    <p>جدول المستويات والقيم المستخدمة داخل النظام.</p>
+                </div>
+            </div>
+
+            <div class="vip-table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>VIP</th>
+                            <th>إجمالي الشحن</th>
+                            <th>XP الترقية</th>
+                            <th>XP الحفاظ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vipTable"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section">
+
+            <div class="section-header-wide">
+                <div>
+                    <span>06 / ANALYTICS</span>
+                    <h2>الإحصائيات</h2>
+                    <p>أرقام إجمالية مبنية على العمليات المحفوظة.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card blue">
+                    <span>العمليات</span>
+                    <strong id="statOperations">0</strong>
+                </div>
+
+                <div class="stat-card cyan">
+                    <span>العملاء</span>
+                    <strong id="statCustomers">0</strong>
+                </div>
+
+                <div class="stat-card green">
+                    <span>إجمالي الشحن</span>
+                    <strong id="statCharge">0</strong>
+                    <small>كوينز</small>
+                </div>
+
+                <div class="stat-card red">
+                    <span>إجمالي الدعم</span>
+                    <strong id="statSupport">0</strong>
+                    <small>دعم</small>
+                </div>
+
+                <div class="stat-card purple">
+                    <span>إجمالي نقاط VIP</span>
+                    <strong id="statVipPoints">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>الدينار</span>
+                    <strong id="statJod">0.00</strong>
+                    <small>JOD</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>الدولار</span>
+                    <strong id="statUsd">0.00</strong>
+                    <small>USD</small>
+                </div>
+
+                <div class="stat-card orange">
+                    <span>أعلى VIP مستهدف</span>
+                    <strong id="statHighestVip">VIP 0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INFO LINKS -->
+        <section class="info-links">
+
+            <a href="#howSystemWorks">
+                <span>01</span>
+                <b>كيف يعمل النظام؟</b>
+                <i>↗</i>
+            </a>
+
+            <a href="#calculationRules">
+                <span>02</span>
+                <b>قواعد الحسبة</b>
+                <i>↗</i>
+            </a>
+
+            <a href="#developer">
+                <span>03</span>
+                <b>عن المطور</b>
+                <i>↗</i>
+            </a>
+
+        </section>
+
+        <!-- HIDDEN-LIKE INFORMATION AT BOTTOM -->
+        <section id="howSystemWorks" class="bottom-info">
+
+            <div>
+                <span>01</span>
+                <h3>طريقة عمل النظام</h3>
+            </div>
+
+            <p>
+                يحدد النظام المستوى الحالي والمستوى المستهدف، ثم يستخدم قيمة الانتقال الأولى المدخلة يدوياً ويحسب الانتقالات التالية تلقائياً من جدول VIP. بعد ذلك يتم جمع نقاط الوصول مع نقاط التثبيت، ثم تقسيم الإجمالي على العرض للحصول على إجمالي شحن الوكيل. جميع النتائج تظهر في الملخص النهائي مرة واحدة.
+            </p>
+
+        </section>
+
+        <section id="calculationRules" class="bottom-info">
+
+            <div>
+                <span>02</span>
+                <h3>قواعد الحسبة</h3>
+            </div>
+
+            <div class="rules-list">
+                <b>نقاط الوصول + نقاط التثبيت = إجمالي نقاط VIP</b>
+                <b>إجمالي نقاط VIP ÷ العرض = إجمالي شحن الوكيل</b>
+                <b>الشحن ÷ 1,000,000 × دعم المليون = الدعم المطلوب</b>
+                <b>الدعم ÷ معدل الدعم × السعر = قيمة العملة</b>
+            </div>
+
+        </section>
+
+        <!-- DEVELOPER -->
+        <section id="developer" class="developer-section">
+
+            <div class="developer-visual">
+                <div class="developer-logo">F90</div>
+                <div class="developer-orbit"></div>
+            </div>
+
+            <div class="developer-content">
+                <span>DEVELOPER PROFILE</span>
+                <h2>F90</h2>
+                <h3>أف تسعين للخدمات الرقمية</h3>
+                <p>
+                    تصميم وتطوير الأنظمة الرقمية والواجهات التفاعلية
+                    مع التركيز على الأداء، التنظيم وتجربة الاستخدام.
+                </p>
+
+                <div class="developer-social">
+                    <span>Instagram</span>
+                    <b>@f90.xd</b>
+                </div>
+            </div>
+
         </section>
 
     </main>
 
-    <!-- DEVELOPER MODAL DIALOG -->
-    <div id="devModal" class="modal-overlay hidden">
-        <div class="modal-card">
-            <button id="closeDevModal" class="modal-close-btn">&times;</button>
-            <div class="dev-avatar">F90</div>
-            <h2 class="dev-modal-title">المطور الرسمي — F90</h2>
-            <p class="dev-modal-sub">أف تسعين للخدمات الرقمية والحلول البرمجية</p>
-
-            <div class="dev-contacts-list mt-20">
-                <div class="dev-c-item">
-                    <span>ID الحساب:</span>
-                    <strong>31991930</strong>
-                    <button class="copy-btn" data-copy="31991930">نسخ</button>
-                </div>
-                <div class="dev-c-item">
-                    <span>WhatsApp:</span>
-                    <strong dir="ltr">+970 568 181 910</strong>
-                    <button class="copy-btn" data-copy="+970568181910">نسخ</button>
-                </div>
-                <div class="dev-c-item">
-                    <span>Instagram:</span>
-                    <strong dir="ltr">@f90.xd</strong>
-                    <button class="copy-btn" data-copy="f90.xd">نسخ</button>
-                </div>
-            </div>
+    <footer>
+        <div>
+            <b>F90</b>
+            <span>SMART DIGITAL SYSTEM</span>
         </div>
-    </div>
-
-    <!-- MAIN FOOTER -->
-    <footer class="app-footer">
-        <div>DEVELOPED BY <strong>F90 SERVICES</strong> © 2026</div>
+        <small>© 2026 جميع الحقوق محفوظة</small>
     </footer>
 
-    <script src="script.js"></script>
+</div>
+
+<!-- DETAIL MODAL -->
+<div id="detailModal" class="modal-overlay hidden">
+    <div class="detail-modal">
+
+        <button id="closeDetail" class="modal-close" type="button">×</button>
+
+        <div class="modal-head">
+            <span>OPERATION DETAILS</span>
+            <h2>تفاصيل العملية</h2>
+        </div>
+
+        <div id="detailContent"></div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
-          </html>
+    </html>
